@@ -14,7 +14,13 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     
     @*HGO.AspNetCore.FileManager Styles*@
-    @this.RenderHgoFileManagerCss(false)
+    <link rel='stylesheet' href='hgofilemanager/jsTree/themes/default/style.min.css' type='text/css' />
+    <link rel='stylesheet' href='hgofilemanager/dropzone/dropzone.css' type='text/css' />
+    <link rel='stylesheet' href='hgofilemanager/fontawesome/css/all.min.css' type='text/css' />
+    <link rel='stylesheet' href='hgofilemanager/context-js/context/skins/kali_dark.css' type='text/css' />
+    <link rel='stylesheet' href='hgofilemanager/toastify/toastify.css' type='text/css' />
+    <link rel='stylesheet' href='hgofilemanager/HgoFileManager.css' type='text/css' />
+    <link rel='stylesheet' href='hgofilemanager/HgoFileManager-dark.css' type='text/css' />
     @*---------------------------------*@
 
 </head>
@@ -53,7 +59,16 @@
     </footer>
 
     @*HGO.AspNetCore.FileManager Scripts*@
-    @this.RenderHgoFileManagerJavaScripts()
+    <script src='hgofilemanager/js.cookie/js.cookie.js'></script>
+    <script src='hgofilemanager/fontawesome/js/fontawesome.min.js'></script>
+    <script src='hgofilemanager/lozad.js/lozad.min.js'></script>
+    <script src='hgofilemanager/jsTree/jstree.min.js'></script>
+    <script src='hgofilemanager/viselect/viselect.js'></script>
+    <script src='hgofilemanager/split.js/split.js'></script>
+    <script src='hgofilemanager/dropzone/dropzone.js'></script>
+    <script src='hgofilemanager/context-js/context/context.min.js'></script>
+    <script src='hgofilemanager/toastify/toastify.js'></script>
+    <script src='hgofilemanager/HgoFileManager.js'></script>
     @*----------------------------------*@
 
     @await RenderSectionAsync("Scripts", required: false)
