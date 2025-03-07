@@ -1,4 +1,7 @@
-using HGO.ASPNetCore.FileManager;
+using HGO.ASPNetCore.FileManager.CommandsProcessor;
+using HGO.ASPNetCore.FileManager.ViewComponents;
+using Microsoft.Extensions.FileProviders;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,7 +9,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // HGO.AspNetCore.FileManager -------
-builder.Services.AddHgoFileManager();
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation(c => c.FileProviders.Add(new EmbeddedFileProvider(typeof(FileManagerComponent)
+    .GetTypeInfo().Assembly, "HGO.ASPNetCore.FileManager")));
+builder.Services.AddSession();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddScoped(typeof(IFileManagerCommandsProcessor), typeof(FileManagerCommandsProcessor));
 //-----------------------------------
 
 var app = builder.Build();
@@ -23,7 +30,15 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 // HGO.AspNetCore.FileManager -------
-app.UseHgoFileManager();
+var embeddedProvider = new EmbeddedFileProvider(typeof(FileManagerComponent)
+    .GetTypeInfo().Assembly, "HGO.ASPNetCore.FileManager.hgofilemanager");
+
+app.UseSession();
+app.UseStaticFiles(new StaticFileOptions()
+{
+    FileProvider = embeddedProvider,
+    RequestPath = new PathString("/hgofilemanager")
+});
 //-----------------------------------
 
 app.UseRouting();
