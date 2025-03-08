@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - HGO.ASPNetCore.FileManager.Test</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/HGO.ASPNetCore.FileManager.Test.styles.css" asp-append-version="true" />
     
@@ -14,13 +14,13 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     
     @*HGO.AspNetCore.FileManager Styles*@
-    <link rel='stylesheet' href='hgofilemanager/jsTree/themes/default/style.min.css' type='text/css' />
-    <link rel='stylesheet' href='hgofilemanager/dropzone/dropzone.css' type='text/css' />
-    <link rel='stylesheet' href='hgofilemanager/fontawesome/css/all.min.css' type='text/css' />
-    <link rel='stylesheet' href='hgofilemanager/context-js/context/skins/kali_dark.css' type='text/css' />
-    <link rel='stylesheet' href='hgofilemanager/toastify/toastify.css' type='text/css' />
-    <link rel='stylesheet' href='hgofilemanager/HgoFileManager.css' type='text/css' />
-    <link rel='stylesheet' href='hgofilemanager/HgoFileManager-dark.css' type='text/css' />
+    <link rel='stylesheet' href='~/lib/jsTree/themes/default/style.min.css' asp-append-version="true" />
+    <link rel='stylesheet' href='~/lib/dropzone/dropzone.css' asp-append-version="true" />
+    <link rel='stylesheet' href='~/lib/fontawesome/css/all.min.css' asp-append-version="true" />
+    <link rel='stylesheet' href='~/lib/context-js/context/skins/kali_dark.css' asp-append-version="true" />
+    <link rel='stylesheet' href='~/lib/toastify/toastify.css' asp-append-version="true" />
+    <link rel='stylesheet' href='~/lib/HgoFileManager.css' asp-append-version="true" />
+    <link rel='stylesheet' href='~/lib/HgoFileManager-dark.css' asp-append-version="true" />
     @*---------------------------------*@
 
 </head>
@@ -59,16 +59,16 @@
     </footer>
 
     @*HGO.AspNetCore.FileManager Scripts*@
-    <script src='hgofilemanager/js.cookie/js.cookie.js'></script>
-    <script src='hgofilemanager/fontawesome/js/fontawesome.min.js'></script>
-    <script src='hgofilemanager/lozad.js/lozad.min.js'></script>
-    <script src='hgofilemanager/jsTree/jstree.min.js'></script>
-    <script src='hgofilemanager/viselect/viselect.js'></script>
-    <script src='hgofilemanager/split.js/split.js'></script>
-    <script src='hgofilemanager/dropzone/dropzone.js'></script>
-    <script src='hgofilemanager/context-js/context/context.min.js'></script>
-    <script src='hgofilemanager/toastify/toastify.js'></script>
-    <script src='hgofilemanager/HgoFileManager.js'></script>
+    <script src='~/lib/js.cookie/js.cookie.js' asp-append-version="true"></script>
+    <script src='~/lib/fontawesome/js/fontawesome.min.js' asp-append-version="true"></script>
+    <script src='~/lib/lozad.js/lozad.min.js' asp-append-version="true"></script>
+    <script src='~/lib/jsTree/jstree.min.js' asp-append-version="true"></script>
+    <script src='~/lib/viselect/viselect.js' asp-append-version="true"></script>
+    <script src='~/lib/split.js/split.js' asp-append-version="true"></script>
+    <script src='~/lib/dropzone/dropzone.js' asp-append-version="true"></script>
+    <script src='~/lib/context-js/context/context.min.js' asp-append-version="true"></script>
+    <script src='~/lib/toastify/toastify.js' asp-append-version="true"></script>
+    <script src='~/lib/HgoFileManager.js' asp-append-version="true"></script>
     @*----------------------------------*@
 
     @await RenderSectionAsync("Scripts", required: false)
