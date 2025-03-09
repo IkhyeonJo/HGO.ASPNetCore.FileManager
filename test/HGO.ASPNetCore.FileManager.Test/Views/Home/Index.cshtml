@@ -1,4 +1,4 @@
-﻿@using HGO.ASPNetCore.FileManager.ViewComponentsModel
+﻿@model HGO.ASPNetCore.FileManager.ViewComponentsModel.FileManagerModel
 
 @{
     ViewData["Title"] = "Home Page";
@@ -7,44 +7,7 @@
 <div class="text-center">
     <h1 class="display-4">HGO ASP.Net Core File Manager Example</h1>
     <div style="height: 550px; margin-bottom:20px">
-        @await Component.InvokeAsync("FileManagerComponent", new FileManagerModel()
-   {
-       Id = "FM1",
-       RootFolder = AppDomain.CurrentDomain.BaseDirectory,
-       ApiEndPoint = Url.Action("HgoApi"),
-       Config = new FileManagerConfig()
-       { /*
-           CompressionLevel = 9,
-           StorageMaxSizeMByte = 10,
-           DisabledFunctions = new List<string>()
-            {
-                // you can disable the following functions
-                "Search",
-               "CreateNewFolder",
-               "CreateNewFile",
-               "Delete",
-               "Rename",
-               "Zip",
-               "Unzip",
-               "Copy",
-               "Cut",
-               "EditFile",
-               "Download",
-               "GetFileContent",
-               "Upload",
-               "ToggleView",
-               "Browse",
-               "Reload",
-               "Breadcrumb",
-               "FoldersTree",
-               "MenuBar",
-               "ContextMenu",
-               "FilePreview",
-               "View"
-            }
-         */
-       }
-   })
+        @await Component.InvokeAsync("FileManagerComponent", Model)
     </div>
 
     <button onclick="getSelectedItems('file')" class="btn btn-success">Get Selected Files</button>

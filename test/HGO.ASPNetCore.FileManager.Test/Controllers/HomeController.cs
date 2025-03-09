@@ -2,6 +2,7 @@ using HGO.ASPNetCore.FileManager.Test.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using HGO.ASPNetCore.FileManager.CommandsProcessor;
+using HGO.ASPNetCore.FileManager.ViewComponentsModel;
 
 namespace HGO.ASPNetCore.FileManager.Test.Controllers
 {
@@ -18,7 +19,46 @@ namespace HGO.ASPNetCore.FileManager.Test.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            FileManagerModel fileManagerModel = new FileManagerModel()
+            {
+                Id = "FM1",
+                RootFolder = AppDomain.CurrentDomain.BaseDirectory,
+                ApiEndPoint = Url.Action("HgoApi"),
+                Config = new FileManagerConfig()
+                { /*
+           CompressionLevel = 9,
+           StorageMaxSizeMByte = 10,
+           DisabledFunctions = new List<string>()
+            {
+                // you can disable the following functions
+                "Search",
+               "CreateNewFolder",
+               "CreateNewFile",
+               "Delete",
+               "Rename",
+               "Zip",
+               "Unzip",
+               "Copy",
+               "Cut",
+               "EditFile",
+               "Download",
+               "GetFileContent",
+               "Upload",
+               "ToggleView",
+               "Browse",
+               "Reload",
+               "Breadcrumb",
+               "FoldersTree",
+               "MenuBar",
+               "ContextMenu",
+               "FilePreview",
+               "View"
+            }
+         */
+                }
+            };
+
+            return View(fileManagerModel);
         }
 
         public IActionResult Privacy()
