@@ -8,12 +8,10 @@ namespace HGO.ASPNetCore.FileManager.Test.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         private readonly IFileManagerCommandsProcessor _processor;
 
-        public HomeController(ILogger<HomeController> logger, IFileManagerCommandsProcessor processor)
+        public HomeController(IFileManagerCommandsProcessor processor)
         {
-            _logger = logger;
             _processor = processor;
         }
 
